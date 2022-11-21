@@ -4,6 +4,7 @@ import MyNavBar from "./components/navbar/NavBarPersonalized.js";
 import logo from "./particl.svg";
 import { Route, Routes } from "react-router-dom";
 import { ShopCar } from "./components/shopping/ShopCar";
+import { getAllProducts } from "./services/ProductsService";
 import React from "react";
 import { Container } from "react-bootstrap";
 import { CardProducto } from "./components/products/CardProducto";
@@ -11,13 +12,10 @@ import {ProductList} from "./components/admin/ProductList";
 import {AddProduct} from "./components/admin/AddProduct";
 import {ReportSale} from "./components/admin/ReportSale";
 import salesJson from "../src/services/sales.json";
-import {getAllProducts} from "./services/ProductsService";
-
 const productList = getAllProducts();
 export const Context = React.createContext([]);
 export var ShopContext = React.createContext([]);
 export var SalesContext = React.createContext(salesJson.sales);
-
 
 function App() {
   return (
